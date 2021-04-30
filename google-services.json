@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1067408667511",
+    "project_id": "mentalhealthdetect",
+    "storage_bucket": "mentalhealthdetect.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067408667511:android:f83ca95b2c98d9e4dde772",
+        "android_client_info": {
+          "package_name": "com.mentalhealth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067408667511-vmmeiksdg00grqkao8ecseslfvv0ltlv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQDOeJaDr22ogSi91D97Z9dFM8HA5B56I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067408667511-vmmeiksdg00grqkao8ecseslfvv0ltlv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
