@@ -6,6 +6,8 @@ import 'package:mental_health_admin/widgets/input_field.dart';
 import 'package:mental_health_admin/widgets/membership.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'dashboard/dashboard.dart';
+
 
 class Home extends StatelessWidget {
   TextEditingController _passwordController= new TextEditingController();
@@ -136,7 +138,7 @@ class Home extends StatelessWidget {
                           FlatButton(
                             color: Colors.green,
                             onPressed: (){
-                              _login();
+                              _login(context);
                             },
                             child: Text(
                               "Login",
@@ -160,7 +162,7 @@ class Home extends StatelessWidget {
       ),
     );
   }
-void _login(){
+void _login(context){
  firebaseMethods.adminSignIn().then((value) async {
    if(_emailController.text=="admin" && _passwordController.text=="Oscar@33")
    {
@@ -176,8 +178,7 @@ void _login(){
         );
      });
      //show sucess msg and navigate
-    
-      
+    Navigator.pushReplacement(context, MaterialPageRoute(builder:(context){return Dashboard();}));      
    }
  });
 }

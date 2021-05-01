@@ -5,6 +5,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:mental_health_admin/screens/home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Firestore firestore = Firestore();
  FirebaseAuth mAuth = FirebaseAuth.instance;
@@ -94,24 +96,18 @@ Future<void> adminSignIn() async {
 
  
   
-//   Future<void>signOut(BuildContext context) async
-//   {
-//     final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-//   SharedPreferences prefs = await SharedPreferences.getInstance();
-    
-//           var uid = prefs.getString("uid");
-//           changeUserStatusOffline(uid).then((value){
-//             changeVesselStatus(uid).then((value){                      
-//             _firebaseAuth.signOut().then((value) {
-//             prefs.clear();
-//               Navigator.pushAndRemoveUntil(context,
-//               MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
-//               ModalRoute.withName('/case'));
-//              //Navigator.pushReplacementNamed(context, '/login');
-//              });
-//           });
-//            });   
-// }
+  Future<void>signOut(BuildContext context) async
+  {
+    final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  SharedPreferences prefs = await SharedPreferences.getInstance();                                  
+            _firebaseAuth.signOut().then((value) {
+            prefs.clear();
+              Navigator.pushAndRemoveUntil(context,
+              MaterialPageRoute(builder: (BuildContext context) => Home()),
+              ModalRoute.withName('/'));
+             });
+         
+}
 
 
 

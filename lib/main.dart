@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mental_health_admin/screens/dashboard/dashboard.dart';
 import 'package:mental_health_admin/screens/home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'dashboard/dashboard.dart';
 
 Future<void> main() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -20,12 +19,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "$title",
       debugShowCheckedModeBanner: false,
-      home:token==null?Home():DashBoard(),
-
-      theme: ThemeData(
+      home:token==null?Home():Dashboard(),
+      theme: ThemeData(        
         primarySwatch: Colors.blue,
       ),
-
     );
   }
 }
